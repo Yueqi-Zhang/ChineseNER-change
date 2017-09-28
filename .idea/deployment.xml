@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="sftp" createEmptyFolders="true">
+    <serverData>
+      <paths name="sftp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/eric-lin/yueqi/ChineseNER-master" local="$PROJECT_DIR$" web="/home/eric-lin/yueqi/ChineseNER-master" />
+            <mapping deploy="/usr/local/cuda-8.0/lib64/" local="$PROJECT_DIR$/dummy_lib" web="/usr/local/cuda-8.0/lib64" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
