@@ -4,6 +4,7 @@ import codecs
 import numpy as np
 import tensorflow as tf
 
+#this is a test
 
 a = [[1,2],[2,3],[3,4],[4,5],[5,6]]
 b = tf.expand_dims(a,0)
