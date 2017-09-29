@@ -37,7 +37,7 @@ def load_sentences(path, lower, zeros):
     if len(sentence) > 0:
         if 'DOCSTART' not in sentence[0][0]:
             sentences.append(sentence)
-    return sentences[:50]
+    return sentences
 
 
 def update_tag_scheme(sentences, tag_scheme):

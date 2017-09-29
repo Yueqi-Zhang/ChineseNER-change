@@ -20,7 +20,7 @@ class Model(object):
         self.seg_dim = config["seg_dim"]
 
         self.num_tags = config["num_tags"]
-        self.num_chars = config["num_chars"]
+        self.num_chars = config["num_chars"]+1
         #self.batch_size = config["batch_size"]
 
 
@@ -41,7 +41,7 @@ class Model(object):
         self.targets = tf.placeholder(dtype=tf.int32,
                                       shape=[None, None],
                                       name="Targets")
-        self.batch_size = tf.expand_dims(tf.shape(self.targets)[0],0)
+        self.batch_size = tf.shape(self.targets)[0]
 
         self.num_segs = 5
 
@@ -177,10 +177,10 @@ class Model(object):
             start_logits = tf.concat(
                 [tf.constant(small, shape=[1, self.num_tags]), tf.zeros([1, 1]), tf.constant(small, shape=[1, 1])], -1)
             start_logits = tf.expand_dims(start_logits,0)
-            start_logits = tf.tile(start_logits, tf.concat([self.batch_size, tf.constant([1,1])], 0))
+            start_logits = tf.tile(start_logits, tf.concat([tf.expand_dims(self.batch_size,0), tf.constant([1,1])], 0))
             end_logits = tf.concat([tf.constant(small, shape=[1, self.num_tags + 1]), tf.zeros([1, 1])], -1)
             end_logits = tf.expand_dims(end_logits, 0)
-            end_logits = tf.tile(end_logits, tf.concat([self.batch_size, tf.constant([1,1])], 0))
+            end_logits = tf.tile(end_logits, tf.concat([tf.expand_dims(self.batch_size,0), tf.constant([1,1])], 0))
             pad_logits = tf.cast(small * tf.ones([self.batch_size, self.num_steps, 2]), tf.float32)
 
             logits = tf.concat([project_logits, pad_logits], axis=-1)
@@ -197,7 +197,7 @@ class Model(object):
                 inputs=logits,
                 tag_indices=targets,
                 transition_params=self.trans,
-                sequence_lengths=tf.reduce_sum(tf.concat([tf.expand_dims(self.sequence_length,0),tf.expand_dims(tf.constant([2]*self.batch_size),0)],0),0))
+                sequence_lengths=tf.reduce_sum(tf.concat([tf.expand_dims(self.sequence_length,0),tf.expand_dims(tf.ones([self.batch_size],tf.int32)*2,0)],0),0))
             return tf.reduce_mean(-log_likelihood)
 
     def create_feed_dict(self, is_train, batch):
@@ -275,9 +275,10 @@ class Model(object):
         lengths, scores, loss = self.run_step(sess, False, batch)
         for item in data:
             str_lines = item["string"]
-            tags = [item["tags"]]
+            seqlen = item["seqlen"]
+            tags = [item["tags"][:seqlen]]
             #loss.append(batch_loss)
-            lengths = [lengths]
+            lengths = [seqlen]
             batch_paths = self.decode(scores, lengths, trans)
             for i in range(len(tags)):
                 result = []

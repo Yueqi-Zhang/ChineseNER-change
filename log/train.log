@@ -1,15 +1,44 @@
-2017-09-28 11:59:50,483 - log/train.log - INFO - num_chars      :	1021
-2017-09-28 11:59:50,483 - log/train.log - INFO - char_dim       :	100
-2017-09-28 11:59:50,483 - log/train.log - INFO - num_tags       :	7
-2017-09-28 11:59:50,483 - log/train.log - INFO - seg_dim        :	20
-2017-09-28 11:59:50,483 - log/train.log - INFO - lstm_dim       :	100
-2017-09-28 11:59:50,483 - log/train.log - INFO - emb_file       :	wiki_100.utf8
-2017-09-28 11:59:50,483 - log/train.log - INFO - clip           :	5
-2017-09-28 11:59:50,483 - log/train.log - INFO - dropout_keep   :	0.5
-2017-09-28 11:59:50,483 - log/train.log - INFO - optimizer      :	sgd
-2017-09-28 11:59:50,484 - log/train.log - INFO - lr             :	0.001
-2017-09-28 11:59:50,484 - log/train.log - INFO - tag_schema     :	iobes
-2017-09-28 11:59:50,484 - log/train.log - INFO - pre_emb        :	True
-2017-09-28 11:59:50,484 - log/train.log - INFO - zeros          :	False
-2017-09-28 11:59:50,484 - log/train.log - INFO - lower          :	True
-2017-09-28 11:59:50,484 - log/train.log - INFO - batch_size     :	32
+2017-09-29 09:36:43,976 - log/train.log - INFO - num_chars      :	4376
+2017-09-29 09:36:43,976 - log/train.log - INFO - char_dim       :	100
+2017-09-29 09:36:43,976 - log/train.log - INFO - num_tags       :	7
+2017-09-29 09:36:43,976 - log/train.log - INFO - seg_dim        :	20
+2017-09-29 09:36:43,976 - log/train.log - INFO - lstm_dim       :	100
+2017-09-29 09:36:43,977 - log/train.log - INFO - emb_file       :	wiki_100.utf8
+2017-09-29 09:36:43,977 - log/train.log - INFO - clip           :	5
+2017-09-29 09:36:43,977 - log/train.log - INFO - dropout_keep   :	0.5
+2017-09-29 09:36:43,977 - log/train.log - INFO - optimizer      :	sgd
+2017-09-29 09:36:43,977 - log/train.log - INFO - lr             :	0.001
+2017-09-29 09:36:43,977 - log/train.log - INFO - tag_schema     :	iobes
+2017-09-29 09:36:43,977 - log/train.log - INFO - pre_emb        :	True
+2017-09-29 09:36:43,977 - log/train.log - INFO - zeros          :	False
+2017-09-29 09:36:43,977 - log/train.log - INFO - lower          :	True
+2017-09-29 09:36:43,977 - log/train.log - INFO - batch_size     :	128
+2017-09-29 09:36:48,457 - log/train.log - INFO - Created model with fresh parameters.
+2017-09-29 09:36:51,659 - log/train.log - INFO - Load pre-trained embedding.
+2017-09-29 09:36:51,660 - log/train.log - INFO - start training
+2017-09-29 09:36:55,631 - log/train.log - INFO - iteration:1 step:1/4499, NER loss:344.202301
+2017-09-29 09:36:59,198 - log/train.log - INFO - iteration:2 step:2/4499, NER loss:588.158630
+2017-09-29 09:37:02,770 - log/train.log - INFO - iteration:3 step:3/4499, NER loss:543.384277
+2017-09-29 09:37:06,294 - log/train.log - INFO - iteration:4 step:4/4499, NER loss:421.576050
+2017-09-29 09:37:09,828 - log/train.log - INFO - iteration:5 step:5/4499, NER loss:337.862335
+2017-09-29 09:37:13,378 - log/train.log - INFO - iteration:6 step:6/4499, NER loss:378.551453
+2017-09-29 09:37:16,931 - log/train.log - INFO - iteration:7 step:7/4499, NER loss:521.304199
+2017-09-29 09:37:20,482 - log/train.log - INFO - iteration:8 step:8/4499, NER loss:347.024475
+2017-09-29 09:37:24,003 - log/train.log - INFO - iteration:9 step:9/4499, NER loss:424.232483
+2017-09-29 09:37:27,623 - log/train.log - INFO - iteration:10 step:10/4499, NER loss:445.033203
+2017-09-29 09:37:32,018 - log/train.log - INFO - iteration:11 step:11/4499, NER loss:455.985352
+2017-09-29 09:37:36,090 - log/train.log - INFO - iteration:12 step:12/4499, NER loss:437.945007
+2017-09-29 09:37:39,698 - log/train.log - INFO - iteration:13 step:13/4499, NER loss:334.274628
+2017-09-29 09:37:43,205 - log/train.log - INFO - iteration:14 step:14/4499, NER loss:416.156128
+2017-09-29 09:37:46,716 - log/train.log - INFO - iteration:15 step:15/4499, NER loss:256.588257
+2017-09-29 09:37:50,242 - log/train.log - INFO - iteration:16 step:16/4499, NER loss:294.178650
+2017-09-29 09:37:53,782 - log/train.log - INFO - iteration:17 step:17/4499, NER loss:347.343445
+2017-09-29 09:37:57,297 - log/train.log - INFO - iteration:18 step:18/4499, NER loss:363.616394
+2017-09-29 09:38:00,817 - log/train.log - INFO - iteration:19 step:19/4499, NER loss:315.566833
+2017-09-29 09:38:04,355 - log/train.log - INFO - iteration:20 step:20/4499, NER loss:360.716431
+2017-09-29 09:38:07,893 - log/train.log - INFO - iteration:21 step:21/4499, NER loss:425.784302
+2017-09-29 09:38:11,440 - log/train.log - INFO - iteration:22 step:22/4499, NER loss:256.724030
+2017-09-29 09:38:14,962 - log/train.log - INFO - iteration:23 step:23/4499, NER loss:311.244751
+2017-09-29 09:38:18,497 - log/train.log - INFO - iteration:24 step:24/4499, NER loss:397.967163
+2017-09-29 09:38:22,008 - log/train.log - INFO - iteration:25 step:25/4499, NER loss:539.057617
+2017-09-29 09:38:25,764 - log/train.log - INFO - iteration:26 step:26/4499, NER loss:390.289856

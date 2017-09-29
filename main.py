@@ -36,7 +36,7 @@ flags.DEFINE_boolean("lower",       True,       "Wither lower case")
 
 flags.DEFINE_integer("max_epoch",   100,        "maximum training epochs")
 flags.DEFINE_integer("steps_check", 500,        "steps per checkpoint")
-flags.DEFINE_integer("batch_size",  32,        "num of sen in a batch")
+flags.DEFINE_integer("batch_size",  128,        "num of sen in a batch")
 flags.DEFINE_string("ckpt_path",    "ckpt",      "Path to save model")
 flags.DEFINE_string("summary_path", "summary",      "Path to store summaries")
 flags.DEFINE_string("log_file",     "train.log",    "File for log")
@@ -190,7 +190,7 @@ def train():
                         loss = []
             else:
                 iteration = 0
-                for i in range(2):
+                for i in range(50):
                     chars, segs, string, tags, sequence_length = seperate_input(train_data)
                     batch = get_batch(chars, segs, tags, sequence_length, FLAGS.batch_size)
                     #batch_chars, batch_segs, batch_tags = tf.train.shuffle_batch([chars, segs, tags], batch_size=FLAGS.batch_size, capacity=10000, min_after_dequeue = 1000, enqueue_many=True)

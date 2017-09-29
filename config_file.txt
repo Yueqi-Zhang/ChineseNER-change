@@ -1,5 +1,5 @@
 {
-    "num_chars": 1021,
+    "num_chars": 4376,
     "char_dim": 100,
     "num_tags": 7,
     "seg_dim": 20,
@@ -13,5 +13,5 @@
     "pre_emb": true,
     "zeros": false,
     "lower": true,
-    "batch_size": 32
+    "batch_size": 128
 }

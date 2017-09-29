@@ -11,11 +11,12 @@ b = tf.expand_dims(a,0)
 bs = tf.expand_dims(tf.shape(a)[0],0)
 mul = tf.concat([bs,tf.constant([1,1])],0)
 c = tf.tile(b,mul)
-
-pad_logits = tf.cast(3 * tf.ones([bs, self.num_steps, 2]), tf.float32)
+num_steps = tf.shape(a)[0]
+pad_logits = tf.cast(3 * tf.ones([tf.shape(a)[0], num_steps, 2]), tf.float32)
+f = tf.expand_dims()tf.ones([tf.shape(a)[0]],tf.int32)*2
 
 sess = tf.Session()
-x,v = sess.run([mul,c])
+x = sess.run(f)
 print(x)
-print('******')
-print(np.shape(v))
+print(np.shape(x))
+
